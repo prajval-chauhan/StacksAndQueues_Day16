@@ -46,5 +46,41 @@ namespace StacksAndQueues_Day16
                 temp = temp.next;
             }
         }
+        /// <summary>
+        /// Shows the value that is present at the top of the stack
+        /// </summary>
+        internal void Peek()
+        {
+            if(this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            Console.WriteLine("\n{0} is at the top of the stack",this.top.data);
+        }
+        /// <summary>
+        /// Deletes the value that is present at the top of the stack
+        /// </summary>
+        internal void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty. Deletion not possible");
+                return;
+            }
+            Console.WriteLine("Value popped is : {0}",this.top.data);
+            this.top = this.top.next;
+        }
+        /// <summary>
+        /// Deletes all the contents of the stack
+        /// </summary>
+        internal void isEmpty()
+        {
+            while(this.top != null)
+            {
+                Peek();
+                Pop();
+            }
+        }
     }
 }
